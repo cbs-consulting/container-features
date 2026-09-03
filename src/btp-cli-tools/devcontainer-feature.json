@@ -1,0 +1,25 @@
+{
+	"id": "btp-cli-tools",
+	"version": "1.0.2",
+	"name": "BTP CLI Tools",
+	"description": "Installs BTP CLI tools. Currently includes the Cloud Foundry CLI from the official Cloud Foundry apt repository (cf<version>-cli).",
+	"containerEnv": {
+		"CF_PLUGIN_HOME": "/usr/local/share/cf-plugins"
+	},
+	"options": {
+		"version": {
+			"type": "string",
+			"proposals": [
+				"8",
+				"7"
+			],
+			"default": "8",
+			"description": "Cloud Foundry CLI major version, used as the apt package suffix: '8' -> cf8-cli, '7' -> cf7-cli."
+		},
+		"plugins": {
+			"type": "string",
+			"default": "",
+			"description": "Comma-separated list of unreviewed third-party plugins to install from CF-Community. Names resolve to the latest published version. E.g. 'multiapps,html5-plugin'."
+		}
+	}
+}

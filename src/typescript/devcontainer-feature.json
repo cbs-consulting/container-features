@@ -1,0 +1,48 @@
+{
+    "id": "typescript",
+    "version": "1.0.1",
+    "name": "TypeScript",
+    "description": "Installs TypeScript and ts-node as global npm packages, and configures VS Code for TypeScript/JavaScript development (ESLint, formatter defaults). Requires Node.js / npm to be installed first.",
+    "options": {
+        "typescript": {
+            "type": "string",
+            "proposals": [
+                "latest",
+                "none"
+            ],
+            "default": "latest",
+            "description": "TypeScript version. 'latest' is resolved at build time and may change between rebuilds; use an exact version for stability, or 'none' to skip."
+        },
+        "ts-node": {
+            "type": "string",
+            "proposals": [
+                "latest",
+                "none"
+            ],
+            "default": "latest",
+            "description": "ts-node version. 'latest' is resolved at build time and may change between rebuilds; use an exact version for stability, or 'none' to skip."
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/node"
+    ],
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "dbaeumer.vscode-eslint",
+                "YoavBls.pretty-ts-errors",
+                "meganrogge.template-string-converter"
+            ],
+            "settings": {
+                "editor.codeActionsOnSave": {
+                    "source.fixAll.eslint": "always"
+                },
+                "typescript.updateImportsOnFileMove.enabled": "always",
+                "javascript.updateImportsOnFileMove.enabled": "always",
+                "[javascript][typescript][typescriptreact]": {
+                    "editor.defaultFormatter": "esbenp.prettier-vscode"
+                }
+            }
+        }
+    }
+}

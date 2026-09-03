@@ -1,0 +1,22 @@
+{
+    "id": "npm-feeds",
+    "version": "1.0.3",
+    "name": "npm Private Feeds",
+    "description": "Configures private npm registry feeds. Writes scope→registry URL mappings to the global .npmrc at build time. At post-create time, stores auth token entries in the user-only ~/.npmrc using the PAT from the specified env var.",
+    "options": {
+        "feeds": {
+            "type": "string",
+            "default": "",
+            "description": "Semicolon-separated list of feed entries in the format '@scope|registryUrl' or '@scope|registryUrl|TOKEN_VAR'. TOKEN_VAR overrides the fallback token-env-var for that specific feed. E.g. '@myorg|https://pkgs.dev.azure.com/org/_packaging/feed/npm/registry/|AZURE_PAT;@other|https://npm.example.com/|OTHER_PAT'"
+        },
+        "token-env-var": {
+            "type": "string",
+            "default": "NPM_TOKEN",
+            "description": "Fallback env var name for feeds that do not specify their own TOKEN_VAR in the feeds string."
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/node"
+    ],
+    "postCreateCommand": "/usr/local/share/npm-feeds/post-create.sh"
+}

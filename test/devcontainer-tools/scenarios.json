@@ -1,0 +1,11 @@
+{
+    "devcontainer_tools_on_node": {
+        "image": "mcr.microsoft.com/devcontainers/base:debian",
+        "features": {
+            "ghcr.io/devcontainers/features/node:1": {
+                "version": "lts"
+            },
+            "devcontainer-tools": {}
+        }
+    }
+}

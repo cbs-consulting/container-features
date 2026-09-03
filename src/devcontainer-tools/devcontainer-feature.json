@@ -1,0 +1,27 @@
+{
+    "id": "devcontainer-tools",
+    "version": "1.0.1",
+    "name": "Dev Container Tools",
+    "description": "Installs the Dev Container CLI (@devcontainers/cli) as a global npm package and adds the Dev Containers VS Code extension. Requires Node.js / npm to be installed first.",
+    "options": {
+        "cli": {
+            "type": "string",
+            "proposals": [
+                "latest",
+                "none"
+            ],
+            "default": "latest",
+            "description": "@devcontainers/cli version. 'latest' is resolved at build time and may change between rebuilds; use an exact version for stability, or 'none' to skip."
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/node"
+    ],
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-vscode-remote.remote-containers"
+            ]
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+	"cap_dev_stack_on_node": {
+		"image": "mcr.microsoft.com/devcontainers/base:debian",
+		"features": {
+			"ghcr.io/devcontainers/features/node:1": {
+				"version": "lts"
+			},
+			"cap-dev-stack": {
+				"cds-dk": "latest",
+				"mbt": "latest",
+				"mta": "latest"
+			}
+		}
+	}
+}

@@ -1,0 +1,14 @@
+{
+    "fiori_dev_stack_on_node": {
+        "image": "mcr.microsoft.com/devcontainers/base:debian",
+        "features": {
+            "ghcr.io/devcontainers/features/node:1": {
+                "version": "lts"
+            },
+            "fiori-dev-stack": {
+                "yo": "latest",
+                "generator-fiori": "latest"
+            }
+        }
+    }
+}

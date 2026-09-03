@@ -1,0 +1,34 @@
+{
+    "npm_feeds_registry": {
+        "image": "mcr.microsoft.com/devcontainers/base:debian",
+        "features": {
+            "ghcr.io/devcontainers/features/node:1": {
+                "version": "lts"
+            },
+            "npm-feeds": {
+                "feeds": "@scope1|https://pkgs.example.com/npm/registry/|TEST_TOKEN_1;@scope2|https://npm2.example.com/registry/|TEST_TOKEN_2",
+                "token-env-var": "TEST_TOKEN_FALLBACK"
+            }
+        },
+        "containerEnv": {
+            "TEST_TOKEN_1": "pat-for-scope1",
+            "TEST_TOKEN_2": "pat-for-scope2",
+            "TEST_TOKEN_FALLBACK": "pat-fallback"
+        }
+    },
+    "npm_feeds_fallback_token": {
+        "image": "mcr.microsoft.com/devcontainers/base:debian",
+        "features": {
+            "ghcr.io/devcontainers/features/node:1": {
+                "version": "lts"
+            },
+            "npm-feeds": {
+                "feeds": "@fallbackscope|https://pkgs.fallback.com/npm/registry/",
+                "token-env-var": "TEST_TOKEN_FALLBACK"
+            }
+        },
+        "containerEnv": {
+            "TEST_TOKEN_FALLBACK": "pat-fallback"
+        }
+    }
+}

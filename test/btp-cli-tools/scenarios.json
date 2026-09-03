@@ -1,0 +1,19 @@
+{
+    "btp_cli_tools_default": {
+        "image": "mcr.microsoft.com/devcontainers/base:debian",
+        "features": {
+            "btp-cli-tools": {
+                "version": "8"
+            }
+        }
+    },
+    "btp_cli_tools_with_plugins": {
+        "image": "mcr.microsoft.com/devcontainers/base:debian",
+        "features": {
+            "btp-cli-tools": {
+                "version": "8",
+                "plugins": "multiapps"
+            }
+        }
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "typescript_on_node": {
+        "image": "mcr.microsoft.com/devcontainers/base:debian",
+        "features": {
+            "ghcr.io/devcontainers/features/node:1": {
+                "version": "lts"
+            },
+            "typescript": {
+                "typescript": "latest",
+                "ts-node": "latest"
+            }
+        }
+    },
+    "typescript_only": {
+        "image": "mcr.microsoft.com/devcontainers/base:debian",
+        "features": {
+            "ghcr.io/devcontainers/features/node:1": {
+                "version": "lts"
+            },
+            "typescript": {
+                "typescript": "latest",
+                "ts-node": "none"
+            }
+        }
+    }
+}

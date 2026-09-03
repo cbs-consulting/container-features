@@ -1,0 +1,8 @@
+{
+    "dev_defaults_default": {
+        "image": "mcr.microsoft.com/devcontainers/base:debian",
+        "features": {
+            "dev-defaults": {}
+        }
+    }
+}

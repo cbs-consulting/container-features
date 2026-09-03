@@ -1,0 +1,53 @@
+{
+	"id": "cap-dev-stack",
+	"version": "1.0.1",
+	"name": "CAP Dev Stack",
+	"description": "Installs SAP CAP development tools as global npm packages (cds-dk, mbt, mta). Requires Node.js / npm to be installed first.",
+	"options": {
+		"cds-dk": {
+			"type": "string",
+			"proposals": [
+				"latest",
+				"none"
+			],
+			"default": "latest",
+			"description": "@sap/cds-dk version. 'latest' is resolved at build time and may change between rebuilds; use an exact version for stability, or 'none' to skip."
+		},
+		"mbt": {
+			"type": "string",
+			"proposals": [
+				"latest",
+				"none"
+			],
+			"default": "latest",
+			"description": "mbt (MTA Build Tool) version. 'latest' is resolved at build time and may change between rebuilds; use an exact version for stability, or 'none' to skip."
+		},
+		"mta": {
+			"type": "string",
+			"proposals": [
+				"latest",
+				"none"
+			],
+			"default": "latest",
+			"description": "mta (Cloud MTA Build Tool) version. 'latest' is resolved at build time and may change between rebuilds; use an exact version for stability, or 'none' to skip."
+		}
+	},
+	"installsAfter": [
+		"ghcr.io/devcontainers/features/node"
+	],
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"SAPSE.vscode-cds",
+				"qwtel.sqlite-viewer",
+				"humao.rest-client"
+			],
+			"settings": {
+				"npm.scriptRunner": "node",
+				"[cds]": {
+					"editor.defaultFormatter": "SAPSE.vscode-cds"
+				}
+			}
+		}
+	}
+}

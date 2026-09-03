@@ -1,0 +1,49 @@
+{
+	"id": "fiori-dev-stack",
+	"version": "1.0.1",
+	"name": "Fiori Dev Stack",
+	"description": "Installs SAP Fiori development tools as global npm packages (yo, generator-fiori). Requires Node.js / npm to be installed first.",
+	"options": {
+		"yo": {
+			"type": "string",
+			"proposals": [
+				"latest",
+				"none"
+			],
+			"default": "latest",
+			"description": "yo (Yeoman) version. 'latest' is resolved at build time and may change between rebuilds; use an exact version for stability, or 'none' to skip."
+		},
+		"generator-fiori": {
+			"type": "string",
+			"proposals": [
+				"latest",
+				"none"
+			],
+			"default": "latest",
+			"description": "@sap/generator-fiori version. 'latest' is resolved at build time and may change between rebuilds; use an exact version for stability, or 'none' to skip."
+		}
+	},
+	"installsAfter": [
+		"ghcr.io/devcontainers/features/node"
+	],
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"formulahendry.auto-rename-tag",
+				"SAPSE.sap-ux-fiori-tools-extension-pack",
+				"lokalise.i18n-ally"
+			],
+			"settings": {
+				"i18n-ally.displayLanguage": "de",
+				"i18n-ally.enabledFrameworks": [
+					"ui5"
+				],
+				"i18n-ally.keystyle": "flat",
+				"i18n-ally.sourceLanguage": "de",
+				"i18n-ally.regex.usageMatchAppend": [
+					"\\bt\\(['\"`]({key})['\"`]\\)"
+				]
+			}
+		}
+	}
+}
