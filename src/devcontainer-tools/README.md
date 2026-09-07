@@ -7,7 +7,7 @@ Installs the [Dev Container CLI](https://github.com/devcontainers/cli) (`@devcon
 ```jsonc
 "features": {
     "ghcr.io/devcontainers/features/node:1": {},
-    "ghcr.io/cbs-group/container-features/devcontainer-tools:1": {}
+    "ghcr.io/cbs-consulting/container-features/devcontainer-tools:1": {}
 }
 ```
 

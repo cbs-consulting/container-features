@@ -43,6 +43,6 @@ No packages are installed at build time — all value is in the `customizations.
 
 ```jsonc
 "features": {
-    "ghcr.io/cbs-group/container-features/dev-defaults:1": {}
+    "ghcr.io/cbs-consulting/container-features/dev-defaults:1": {}
 }
 ```
