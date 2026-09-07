@@ -14,7 +14,7 @@ Requires Node.js / npm. Add `ghcr.io/devcontainers/features/node` before this fe
 ```jsonc
 "features": {
     "ghcr.io/devcontainers/features/node:1": { "version": "lts" },
-    "ghcr.io/cbs-consulting/container-features/npm-feeds:1": {
+    "ghcr.io/cbs-group/container-features/npm-feeds:1": {
         "feeds": "@myorg|https://pkgs.dev.azure.com/org/_packaging/feed/npm/registry/|AZURE_DEVOPS_PAT"
     }
 }
