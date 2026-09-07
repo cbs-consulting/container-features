@@ -6,7 +6,7 @@ Installs BTP CLI tools. Currently includes the Cloud Foundry CLI from the offici
 
 ```jsonc
 "features": {
-    "ghcr.io/cbs-consulting/container-features/btp-cli-tools:1": {
+    "ghcr.io/cbs-group/container-features/btp-cli-tools:1": {
         "version": "8",
         "plugins": "multiapps,html5-plugin"
     }

@@ -16,7 +16,7 @@ Each package has its own version option that accepts:
 ```jsonc
 "features": {
     "ghcr.io/devcontainers/features/node:1": {},
-    "ghcr.io/cbs-consulting/container-features/cap-dev-stack:1": {
+    "ghcr.io/cbs-group/container-features/cap-dev-stack:1": {
         "cds-dk": "latest",
         "mbt": "none"
     }
