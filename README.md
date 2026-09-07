@@ -1,7 +1,7 @@
 # container-features
 
 Dev Container Features for SAP BTP / CAP development, published to GHCR at
-`ghcr.io/cbs-group/container-features`.
+`ghcr.io/cbs-consulting/container-features`.
 
 ## Features
 
@@ -23,13 +23,13 @@ Dev Container Features for SAP BTP / CAP development, published to GHCR at
 {
   "features": {
     "ghcr.io/devcontainers/features/node:1": { "version": "lts" },
-    "ghcr.io/cbs-group/container-features/dev-defaults:1": {},
-    "ghcr.io/cbs-group/container-features/devcontainer-tools:1": {},
-    "ghcr.io/cbs-group/container-features/typescript:1": {},
-    "ghcr.io/cbs-group/container-features/btp-cli-tools:1": {},
-    "ghcr.io/cbs-group/container-features/cap-dev-stack:1": {},
-    "ghcr.io/cbs-group/container-features/fiori-dev-stack:1": {},
-    "ghcr.io/cbs-group/container-features/npm-feeds:1": {
+    "ghcr.io/cbs-consulting/container-features/dev-defaults:1": {},
+    "ghcr.io/cbs-consulting/container-features/devcontainer-tools:1": {},
+    "ghcr.io/cbs-consulting/container-features/typescript:1": {},
+    "ghcr.io/cbs-consulting/container-features/btp-cli-tools:1": {},
+    "ghcr.io/cbs-consulting/container-features/cap-dev-stack:1": {},
+    "ghcr.io/cbs-consulting/container-features/fiori-dev-stack:1": {},
+    "ghcr.io/cbs-consulting/container-features/npm-feeds:1": {
       "feeds": "@myorg|https://pkgs.dev.azure.com/org/_packaging/feed/npm/registry/|AZURE_DEVOPS_PAT"
     }
   }
@@ -50,7 +50,7 @@ npm-based tools default to `latest`, resolved when the container image is built.
 ```jsonc
 {
   "features": {
-    "ghcr.io/cbs-group/container-features/cap-dev-stack:1": {
+    "ghcr.io/cbs-consulting/container-features/cap-dev-stack:1": {
       "cds-dk": "8.6.1",
       "mbt": "none"
     }
