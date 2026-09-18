@@ -5,6 +5,7 @@ set -e
 
 # Feature options are exposed as uppercased environment variables (version -> VERSION).
 VERSION="${VERSION:-8}"
+SKIP_CF_ON_FAILURE="${SKIP_CF_ON_FAILURE:-true}"
 
 echo "Activating feature 'btp-cli-tools' (cf${VERSION}-cli)"
 
@@ -16,13 +17,26 @@ apt-get install -y wget gnupg ca-certificates
 wget -q -O - https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.key | gpg --dearmor -o /usr/share/keyrings/cli.cloudfoundry.org.gpg
 echo "deb [signed-by=/usr/share/keyrings/cli.cloudfoundry.org.gpg] https://packages.cloudfoundry.org/debian stable main" | tee /etc/apt/sources.list.d/cloudfoundry-cli.list
 
-apt-get update -y
-apt-get install -y "cf${VERSION}-cli"
+CF_INSTALLED=true
+if ! apt-get update -y || ! apt-get install -y "cf${VERSION}-cli"; then
+	if [ "${SKIP_CF_ON_FAILURE}" != "true" ]; then
+		echo "ERROR: Cloud Foundry CLI installation failed." >&2
+		exit 1
+	fi
+	echo "WARNING: Cloud Foundry CLI installation failed and will be skipped."
+	echo "         One upstream example is https://github.com/cloudfoundry/cli/issues/3863."
+	rm -f /etc/apt/sources.list.d/cloudfoundry-cli.list
+	CF_INSTALLED=false
+fi
 
 # Clean up apt lists to keep the image layer small.
 rm -rf /var/lib/apt/lists/*
 
-echo "Done. Installed $(cf version)"
+if [ "${CF_INSTALLED}" = "true" ]; then
+	echo "Done. Installed $(cf version)"
+else
+	echo "Done without installing the Cloud Foundry CLI."
+fi
 
 # Install CF CLI plugins if requested.
 # PLUGINS is a comma-separated list, e.g. "multiapps,html5-plugin".
@@ -30,7 +44,7 @@ export CF_PLUGIN_HOME=/usr/local/share/cf-plugins
 mkdir -p "${CF_PLUGIN_HOME}"
 
 # Plugins are installed to a shared directory so all container users can use them.
-if [ -n "${PLUGINS:-}" ]; then
+if [ -n "${PLUGINS:-}" ] && [ "${CF_INSTALLED}" = "true" ]; then
 	echo "WARNING: CF Community plugins are unreviewed third-party binaries."
 	echo "         Plugin names resolve to the latest version published by the community repository."
 	printf '%s\n' \
@@ -49,6 +63,8 @@ if [ -n "${PLUGINS:-}" ]; then
 		echo "Installing plugin: $plugin"
 		cf install-plugin "$plugin" -r CF-Community -f
 	done
+elif [ -n "${PLUGINS:-}" ]; then
+	echo "WARNING: Skipping CF CLI plugins because the Cloud Foundry CLI was not installed."
 fi
 
 # Build-installed plugins are shared but may only be changed by root.
