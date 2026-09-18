@@ -18,7 +18,10 @@ Installs BTP CLI tools. Currently includes the Cloud Foundry CLI from the offici
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
 | version | Cloud Foundry CLI major version, used as the apt package suffix: `8` -> `cf8-cli`, `7` -> `cf7-cli`. | string | 8 |
+| skip-cf-on-failure | Keep building the container without CF CLI or CF plugins if its verified APT installation fails. The failing CF repository is removed. | boolean | true |
 | plugins | Comma-separated list of unreviewed third-party plugins to install from CF-Community. Names resolve to the latest published version. E.g. `multiapps,html5-plugin`. | string | |
+
+`skip-cf-on-failure` is an availability fallback for Cloud Foundry APT repository failures. It never disables APT signature verification. By default, an unavailable or invalid repository does not prevent the container from building, but `cf` and requested CF plugins are omitted. Set the option to `false` to fail the build instead. The [invalid repository signature reported in cloudfoundry/cli#3863](https://github.com/cloudfoundry/cli/issues/3863) is one example.
 
 Plugins selected through the feature option are installed into a shared, root-owned directory. Container users can run them but cannot add, update, or remove plugins there. Change the `plugins` option and rebuild the container to manage the shared plugin set.
 

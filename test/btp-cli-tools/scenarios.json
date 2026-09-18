@@ -7,6 +7,16 @@
             }
         }
     },
+    "btp_cli_tools_skip_cf_on_failure": {
+        "image": "mcr.microsoft.com/devcontainers/base:debian",
+        "features": {
+            "btp-cli-tools": {
+                "version": "does-not-exist",
+                "skip-cf-on-failure": true,
+                "plugins": "multiapps"
+            }
+        }
+    },
     "btp_cli_tools_with_plugins": {
         "image": "mcr.microsoft.com/devcontainers/base:debian",
         "features": {
