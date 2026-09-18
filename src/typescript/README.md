@@ -35,14 +35,14 @@ Requires Node.js / npm. Add `ghcr.io/devcontainers/features/node` before this fe
 ```jsonc
 "features": {
     "ghcr.io/devcontainers/features/node:1": { "version": "lts" },
-    "ghcr.io/cbs-group/container-features/typescript:1": {}
+    "ghcr.io/cbs-consulting/container-features/typescript:1": {}
 }
 ```
 
 Pin a specific TypeScript version:
 
 ```jsonc
-"ghcr.io/cbs-group/container-features/typescript:1": {
+"ghcr.io/cbs-consulting/container-features/typescript:1": {
     "typescript": "5.4.5",
     "ts-node": "none"
 }
