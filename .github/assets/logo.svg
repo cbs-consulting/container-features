@@ -1,8 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
   <rect x="4" y="4" width="112" height="112" rx="24" fill="#EE7D01" />
-  <polygon points="60,26 90,43 60,60 30,43" fill="#FFFFFF" />
-  <polygon points="30,43 60,60 60,94 30,77" fill="#FFFFFF" fill-opacity="0.72" />
-  <polygon points="60,60 90,43 90,77 60,94" fill="#FFFFFF" fill-opacity="0.45" />
-  <circle cx="90" cy="88" r="17" fill="#353433" stroke="#EE7D01" stroke-width="4" />
-  <path d="M90 80v16M82 88h16" stroke="#EE7D01" stroke-width="4" stroke-linecap="round" />
+  <g transform="translate(60.0 60.0)">
+  <polygon points="-29.4,-17.0 0.0,0.0 0.0,34.0 -29.4,17.0" fill="#FADBB8" />
+  <polygon points="-25.6,-10.4 -8.2,-0.3 -25.6,9.7" fill="#F8C894" />
+  <polygon points="-3.8,27.4 -21.2,17.3 -3.8,7.3" fill="#F8C894" />
+  <polygon points="0.0,0.0 29.4,-17.0 29.4,17.0 0.0,34.0" fill="#F6B873" />
+  <polygon points="3.8,2.2 21.2,-7.8 3.8,22.3" fill="#F3A550" />
+  <polygon points="25.6,14.8 8.2,24.8 25.6,-5.3" fill="#F3A550" />
+  <polygon points="0.0,-34.0 29.4,-17.0 0.0,0.0 -29.4,-17.0" fill="#FFFFFF" />
+  <polygon points="0.0,-29.6 17.4,-19.5 -17.4,-19.5" fill="#FCEAD6" />
+  <polygon points="0.0,-4.4 -17.4,-14.4 17.4,-14.4" fill="#FCEAD6" />
+  </g>
 </svg>
