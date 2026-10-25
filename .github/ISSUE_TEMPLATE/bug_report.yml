@@ -1,0 +1,56 @@
+name: Bug report
+description: A Feature fails to install or does not work as expected in the dev container.
+labels: [bug]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: Describe the problem and what you expected to happen instead.
+    validations:
+      required: true
+  - type: dropdown
+    id: feature
+    attributes:
+      label: Feature
+      options:
+        - btp-cli-tools
+        - cap-dev-stack
+        - dev-defaults
+        - devcontainer-tools
+        - fiori-dev-stack
+        - npm-feeds
+        - typescript
+        - Not sure
+    validations:
+      required: true
+  - type: textarea
+    id: config
+    attributes:
+      label: devcontainer.json
+      description: The relevant part of your `devcontainer.json`, including the base image, the Feature reference with its version tag, its options and other Features you use. Remove any tokens. It is formatted as code automatically.
+      render: jsonc
+      placeholder: |
+        {
+          "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+          "features": {
+            "ghcr.io/devcontainers/features/node:1": { "version": "lts" },
+            "ghcr.io/cbs-consulting/container-features/cap-dev-stack:1": {}
+          }
+        }
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: How you build the container (VS Code Dev Containers, Codespaces, Dev Container CLI) with its version, and your host operating system.
+      placeholder: VS Code Dev Containers 0.430.0, Docker Desktop 4.40, macOS 15
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs
+      description: 'Relevant build or error output, for example from **Dev Containers: Show Container Log**. It is formatted as code automatically.'
+      render: shell
