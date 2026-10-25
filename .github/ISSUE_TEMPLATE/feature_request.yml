@@ -1,0 +1,23 @@
+name: Feature request
+description: Suggest a new Feature, a new option or another improvement.
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem would this solve?
+      description: Describe the situation in which the Features fall short today.
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed solution
+      description: What should the Feature do instead, or which new Feature or option do you need?
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives
+      description: Workarounds or other solutions you considered.
