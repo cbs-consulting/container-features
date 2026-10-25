@@ -20,7 +20,7 @@ jobs:
     name: Lint shell scripts
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
 
       - name: Run shellcheck
         run: shellcheck lib/*.sh scripts/*.sh src/*/*.sh test/test.sh test/*/*.sh
@@ -51,7 +51,7 @@ jobs:
           - feature: btp-cli-tools
             allow-failure: true
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
 
       - uses: actions/setup-node@v5
         with:
@@ -87,7 +87,7 @@ jobs:
       contents: read
 
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
 
       - uses: actions/setup-node@v5
         with:
