@@ -56,6 +56,12 @@ approach.
    top-level `README.md` if you added a Feature.
 8. Open a pull request against `main` and fill in the template.
 
+Pull requests are merged through a merge queue. Once the checks pass and the
+pull request is approved, choose **Merge when ready**: GitHub tests it on top
+of `main` and the pull requests queued ahead of it, and merges it when the
+checks pass there too. You don't have to update your branch with `main`
+first.
+
 ## Commit messages
 
 Use [Conventional Commits](https://www.conventionalcommits.org/) with the
