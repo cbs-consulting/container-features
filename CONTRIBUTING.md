@@ -58,7 +58,13 @@ approach.
    option or a new failure mode), update the agent skill in
    `skills/container-features/SKILL.md` as well, and raise `version` in
    `plugin.json` and `.claude-plugin/plugin.json`.
-8. Open a pull request against `main` and fill in the template.
+8. Add a line under "Unreleased" in [CHANGELOG.md](CHANGELOG.md) that
+   describes the change for users and starts with the Feature and its new
+   version, for example `npm-feeds 1.0.6: keep existing .npmrc`. A pull
+   request that changes nothing a user notices, such as a CI, test or
+   documentation fix, gets the label "no changelog" instead.
+9. Open a pull request against `main` and fill in the template. It needs the
+   checks **Test features** and **Changelog entry**.
 
 Pull requests are merged through a merge queue. Once the checks pass and the
 pull request is approved, choose **Merge when ready**: GitHub tests it on top

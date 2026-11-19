@@ -8,3 +8,4 @@
 - [ ] `shellcheck` and `./scripts/sync-lib.sh --check` pass
 - [ ] `version` in `devcontainer-feature.json` is bumped for every changed Feature (major for breaking changes)
 - [ ] The Feature's `README.md` is updated if an option or the behaviour changed
+- [ ] A line is added under "Unreleased" in `CHANGELOG.md`, or the change needs the label "no changelog"
